@@ -11,14 +11,14 @@ class AppDrawer extends StatelessWidget {
       child: Column(
         children: [
           AppBar(
-            title: Text('Bem-vindo Usuário'),
+            title: const Text('Bem-vindo Usuário'),
             centerTitle: true,
             automaticallyImplyLeading: false,
           ),
           const Divider(),
           ListTile(
-            leading: Icon(Icons.shop),
-            title: Text('Loja'),
+            leading: const Icon(Icons.shop),
+            title: const Text('Loja'),
             onTap: () {
               Navigator.of(context).pushReplacementNamed(
                 AppRoutes.HOME,
@@ -27,11 +27,21 @@ class AppDrawer extends StatelessWidget {
           ),
           const Divider(),
           ListTile(
-            leading: Icon(Icons.payment),
-            title: Text('Pedidos'),
+            leading: const Icon(Icons.payment),
+            title: const Text('Pedidos'),
             onTap: () {
               Navigator.of(context).pushReplacementNamed(
                 AppRoutes.ORDERS,
+              );
+            },
+          ),
+          const Divider(),
+          ListTile(
+            leading: const Icon(Icons.edit),
+            title: const Text('Gerenciar Produtos'),
+            onTap: () {
+              Navigator.of(context).pushReplacementNamed(
+                AppRoutes.PRODUCTS,
               );
             },
           ),
