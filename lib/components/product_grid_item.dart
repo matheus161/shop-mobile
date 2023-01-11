@@ -32,13 +32,7 @@ class ProductGridItem extends StatelessWidget {
               color: Theme.of(context).colorScheme.secondary,
             ),
           ),
-          title: FittedBox(
-            fit: BoxFit.fitWidth,
-            child: Text(
-              product.name,
-              textAlign: TextAlign.center,
-            ),
-          ),
+          title: Text(product.name),
           trailing: IconButton(
             onPressed: () {
               cart.addItem(product);

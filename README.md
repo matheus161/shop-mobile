@@ -31,9 +31,20 @@ Problematização e forma de resolução das comunicações entre componentes.
 - Ele será um container, e envolverá toda a minha aplicação dentro do "container"(Ex: MultiProvider na main.dart);
 - Todos os componentes filhos podem acessar os dados, sem que necessite passar as informações manualmente;
 - O acesso será feito através do **of(context)**;
-- Quando um estado(dado) muda, o método build() é executado e a UI é atualizada, mas em componentes do tipo Stateless, será necessário passar essa informação via construtor, para que a interface gráfica seja atualizada.
+- Quando um estado(dado) muda, o método build() é executado e a UI é atualizada, mas em componentes do tipo Stateless, será necessário passar essa informação via construtor, para que a interface gráfica seja atualizada;
 - Um provider pode ser definido em um dos ramos da sua aplicação,porém, não será possível acessar em outros locais que não pertençam a esse ramo.
 
 ## Consumer
 
 - Utilizado especificamente no ponto da árvore de componentes que haverá mudança (Ex: Um botão que altera a sua cor a partir do valor de uma variável).
+
+# Comunicação na internet
+
+- Feita através de uma pilha de protoclos TCP/IP;
+- Cada camada tem uma função, o HTTP (camada de aplicação) é o que está mais próximo do usuário;
+- Existem métodos como: GET, POST, PATCH, PUT e DELETE;
+- Os dados são retornados e enviados via JSON.
+
+# Future
+
+- No momento que uma requisição está sendo feita, o protocolo HTTP é baseado em requisição e resposta, será passado alguns dados convertidos(JSON) para que possa ser salvo no back-end. O tempo de processamento dessa requisição, indo até o servidor nos EUA e voltando minha localição, pode variar. Esse tempo é tratado pelo mecanismo do **Future**, somente depois que a resposta está pronta, é que será retornada pela requisição então, terei acesso para executar algum código.
