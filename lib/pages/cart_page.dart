@@ -106,7 +106,7 @@ class _CartButtonState extends State<CartButton> {
                     widget.cart.clear();
                     setState(() => _isLoading = false);
 
-                    Navigator.of(context).pushNamed(AppRoutes.HOME);
+                    Navigator.of(context).pushNamed(AppRoutes.AUTH_OR_HOME);
                   },
           );
   }
