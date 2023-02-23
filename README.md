@@ -48,3 +48,31 @@ Problematização e forma de resolução das comunicações entre componentes.
 # Future
 
 - No momento que uma requisição está sendo feita, o protocolo HTTP é baseado em requisição e resposta, será passado alguns dados convertidos(JSON) para que possa ser salvo no back-end. O tempo de processamento dessa requisição, indo até o servidor nos EUA e voltando minha localição, pode variar. Esse tempo é tratado pelo mecanismo do **Future**, somente depois que a resposta está pronta, é que será retornada pela requisição então, terei acesso para executar algum código.
+
+# Shared Preferences
+
+- Permite salvar dados especifícos no dispotivo local, pode ser utilizado para salvar preferências como: DarkMode, dados de login, token e afins.
+
+# Regras de Autenticação no Real Time Database
+
+- Apenas o usuário logado em específico consegue alterar os seus próprios dados
+  {
+  "rules": {
+  "orders": {
+  "$uid": {
+        ".write": "$uid === auth.uid",
+  ".read": "$uid === auth.uid",
+      },
+    },
+    "userFavorites": {
+    	"$uid": {
+  ".write": "$uid === auth.uid",
+        ".read": "$uid === auth.uid",
+  },
+  },
+  "products": {
+  ".write": "auth != null",
+  ".read": "auth != null",
+  }
+  }
+  }
